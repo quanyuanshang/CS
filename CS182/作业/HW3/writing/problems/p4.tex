@@ -1,0 +1,38 @@
+\item \defpoints{10} [Probability and Estimation]
+
+The Poisson distribution is a useful discrete distribution which can be used to model the number of occurrences of something per unit time. For example, in networking, the number of packets to arrive in a given time window is often assumed to follow a Poisson distribution.
+$\mathcal{D}=\{ x_{1}, x_{2}, \ldots, x_{n} \}, n>1$ are i.i.d. samples from exponential distribution with parameter $\lambda > 0$, i.e., $X \sim \text{Expo}(\lambda)$. Recall the PDF of exponential distribution is
+$$p(x\mid \lambda) = \begin{cases}
+\lambda e^{-\lambda x},&\quad x > 0 \\
+0,&\quad \text{otherwise}
+\end{cases}$$
+
+\begin{itemize}
+\item[(a)] To derive the posterior distribution of $\lambda$, we assume its prior distribution follows gamma distribution with parameters $\alpha,\beta > 0$, i.e., $\lambda \sim\text{Gamma}(\alpha,\beta)$ (since the range of gamma distribution is also $(0,+\infty)$, thus it's a plausible assumption). The PDF of $\lambda$ is given by
+\begin{align*}
+p(\lambda\mid \alpha,\beta) &= \frac{\beta^{\alpha}}{\Gamma(\alpha)} \lambda^{\alpha-1}e^{-\lambda\beta} \\
+\text{where \ \ \ \ } \Gamma(\alpha) &= \int_{0}^{+\infty} t^{\alpha-1}e^{-t}dt,\ \alpha>0.
+\end{align*}
+Show that the posterior distribution $p(\lambda\mid \mathcal{D})$ is also a gamma distribution and identify its parameters. Hints: Feel free to drop constants. \defpoints{5}
+
+\item[(b)] Derive the maximum a posterior (MAP) estimation for $\lambda$ under $\text{Gamma}(\alpha,\beta)$ prior. \defpoints{5}
+
+\end{itemize}
+
+\solution
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage

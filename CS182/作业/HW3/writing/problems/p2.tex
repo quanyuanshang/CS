@@ -1,0 +1,34 @@
+\item \defpoints{20} [Maximum Margin Classifier]
+Consider a data set of $n\ d$-dimensional sample points, $\left\{x_1, \ldots, x_n\right\}$. Each sample point, $x_i \in \mathbb{R}^d$, has a corresponding label, $y_i$, indicating to which class that point belongs. For now, we will assume that there are only two classes and that every point is either in the given class $\left(y_i=1\right)$ or not in the class $\left(y_i=-1\right)$. Consider the linear decision boundary defined by the hyperplane
+$$
+\mathcal{H}=\left\{x \in \mathbb{R}^d: x \cdot w+\alpha=0\right\} .
+$$
+The maximum margin classifier maximizes the distance from the linear decision boundary to the closest training point on either side of the boundary, while correctly classifying all training points. Suppose the points are linear seperable, and the margin is $\gamma$.
+
+\begin{itemize}
+\item[(a)]The maximum margin classifier aims to maximize the distance from the training points to the decision boundary. Derive the distance from a point $x_i$ to the hyperplane $\mathcal{H}$. ~\defpoints{5}
+
+\item[(b)] An in-class sample point is correctly classified if it is on the positive side of the decision boundary, and an out-of-class sample is correctly classified if it is on the negative side. Assuming all the points are correctly classified, write a set of $n$ constraints to ensure that all $n$ points are correctly classified. ~\defpoints{5}
+
+\item[(c)] Using the previous parts, write an optimization problem for the maximum margin classifier. For convinent, we should additionally add a constrain $\|w\|=1$ ~\defpoints{5}
+
+\item[(d)] To simply the optimization problem, we can rewrite the optimization problem in part (c) by setting $w'=\dfrac{w}{\gamma}$ and $\alpha'=\dfrac{\alpha}{\gamma}$. Write the optimization problem for the simlified maximum margin classifier. ~\defpoints{5}
+
+\end{itemize}
+
+\solution
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage

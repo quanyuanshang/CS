@@ -1,0 +1,79 @@
+\item ~\defpoints{25} [Boosting]
+
+Suppose that we are interested in learning a classifier, such that at any turn of a game we can pose a question, like ``should I attack this ant hill now?", and get an answer.That is, we want to build a classifier which we can feed some features on the current game state, and get the output ``attack" or ``don't attack". There are many possible ways to define what the action ``attack" means, but for now let's define it as sending all friendly ants that can see the ant hill under consideration towards it.
+
+Let's recall the AdaBoost algorithm described in class. Its input is a dataset $\{(x_{i},y_{i})\}_{i=1}^{n}$, with $x_i$ being the $i$-th sample, and $y_{i}\in \{-1,1\}$ denoting the $i$-th label, $i=1,2,...,n$. The features might be composed of a count of the number of friendly ants that can see the ant hill under consideration, and a count of the number of enemy ants these friendly ants can see. For example, if there were 10 friendly ants that could see a particular ant hill, and 5 enemy ants that the friendly ants could see, we would have:
+$$x_1 = \begin{bmatrix} 10 \\ 5 \end{bmatrix}$$
+
+The label of the example $x_{1}$ is $y_{1} = 1$, once the friendly ants were successful in razing the enemy ant hill, and $y_{1} = 0$ otherwise. We could generate such examples by running a greedy bot (or any other opponent bot) against a bot that we periodically try to attack an enemy ant hill. Each time this bot tries the attack, we record (say, after $20$ turns or some other significant amount of time) whether the attack was successful or not.
+
+\begin{itemize}
+\item[(a)] Let $\epsilon_t$ denote the error of a weak classifier $h_t$:
+$$\epsilon_{t} = \sum_{i=1}^{n} D_{t}(i) \mathbb{I}(y_{i} \neq h_{t}(x_{i}))$$
+In the simple “attack” / “don't attack” scenario, suppose that we have implemented the following six weak classifiers:
+\begin{align*}
+h^{(1)}(x_{i}) = 2 * \mathbb{I}(x_{i1} \geq 2) - 1, \hspace{1cm}  & h^{(4)}(x_{i}) = 2 * \mathbb{I}(x_{i2} \leq 2) - 1,  \\
+h^{(2)}(x_{i}) = 2 * \mathbb{I}(x_{i1} \geq 6) - 1, \hspace{1cm}  & h^{(5)}(x_{i}) = 2 * \mathbb{I}(x_{i2} \leq 6) - 1,  \\
+h^{(3)}(x_{i}) = 2 * \mathbb{I}(x_{i1} \geq 10) - 1, \hspace{1cm} & h^{(6)}(x_{i}) = 2 * \mathbb{I}(x_{i2} \leq 10) - 1.
+\end{align*}
+Given ten training data points ($n = 10$) as shown in Table \ref{table1}:
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|cc|c|}
+    \hline
+    $i$ & $x_{i1}$ & $x_{i2}$ & $y_{i}$ \\ \hline
+    1 & 1.5 & 0.5 & 1 \\
+    2 & 2.5 & 1.5 & 1 \\
+    3 & 3.5 & 3.5 & 1 \\
+    4 & 6.5 & 5.5 & 1 \\
+    5 & 7.5 & 10.5 & 1 \\
+    6 & 1.5 & 2.5 & -1 \\
+    7 & 3.5 & 1.5 & -1 \\
+    8 & 5.5 & 5.5 & -1 \\
+    9 & 7.5 & 8.5 & -1 \\
+    10 & 1.5 & 10.5 & -1 \\
+    \hline
+    \end{tabular}
+    \caption{The training data in (a).}
+    \label{table1}
+\end{table}
+
+please show that what is the minimum value of $\epsilon_{1}$ and which of $h^{(1)},\cdots ,h^{(6)}$ achieve this value? Note that there may be multiple classifiers that all have the same $\epsilon_{1}$. You should list all classifiers that achieve the minimum $\epsilon_{1}$ value. ~\defpoints{5}
+
+\item[(b)] For all the questions in the remainder of this section, let $h_{1}$ denote $h^{(1)}$ chosen in the first round of boosting. (That is, $h^{(1)}$ was the classifier that achieved the minimum $\epsilon_{1}$.)
+\begin{enumerate}
+    \item[(1)] What is the value of $\alpha_{1}$ (the weight of this first classifier $h_{1}$)? ~\defpoints{2}
+
+    \item[(2)] What should $Z_{t}$ be in order to make sure the distribution $D_{t+1}$ is normalized correctly? That is, derive the formula of $Z_{t}$ in terms of $\epsilon_{t}$ that will ensure $\sum\limits_{i=1}^{n} D_{t+1}(i) = 1$. Please also derive the formula of $\alpha_{t}$ in terms of $\epsilon_{t}$. ~\defpoints{5}
+
+    \item[(3)] Which points will increase in significance in the second round of boosting? That is, for which points will we have $D_{1}(i) < D_{2}(i)$? What are the values of $D_{2}$ for these points? ~\defpoints{5}
+
+    \item[(4)] In the second round of boosting, the weights on the points will be different, and thus the error $\epsilon_2$ will also be different. Which of $h^{(1)}, \cdots, h^{(6)}$ will minimize $\epsilon_2$? (Which classifier will be selected as the second weak classifier $h_2$?) What is its value of $\epsilon_2$? ~\defpoints{5}
+
+    \item[(5)] What will the average error of the final classifier $H$ be, if we stop after these two rounds of boosting? That is, if $H(x) = \text{sign}(\alpha_{1}h_{1}(x) + \alpha_{2}h_{2}(x))$, what will the  training error $\epsilon = \dfrac{1}{n} \sum\limits_{i=1}^{n} \mathbb{I} (y_{i} \neq H(x_{i}))$ be? Is this more, less, or the same as the error we would get, if we just used one of the weak classifiers instead of this final classifier $H$ ~\defpoints{3}
+
+\end{enumerate}
+\end{itemize}
+
+\solution
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage

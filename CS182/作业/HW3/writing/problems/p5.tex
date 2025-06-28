@@ -1,0 +1,32 @@
+\item \defpoints{10} [Linear Classification] Consider the ``Multi-class Logistic Regression'' algorithm. Given training set $\mathcal{D}=\{(x^i,y^i)\mid i=1,\ldots,n\}$ where $x^i\in \mathbb{R}^{p+1}$ is the feature vector and $y^i\in \mathbb{R}^{k}$ is a one-hot binary vector indicating $k$ classes. We want to find the parameter $\hat{\beta}=[\hat{\beta}_1,\ldots,\hat{\beta}_k]\in \mathbb{R}^{(p+1)\times k}$ that maximize the likelihood for the training set. Introducing the softmax function, we assume our model has the form
+$$p(y_c^i=1\mid x^i;\beta) = \frac{\exp(\beta_c^\top x^i)}{\sum_{c'}\exp(\beta_{c'}^\top x^i)}$$
+where $y_c^i$ is the $c$-th element of $y^i$.
+
+\begin{itemize}
+\item[(a)] Complete the derivation of the conditional log likelihood for our model, which is
+\begin{align*}
+    \ell(\beta) = \ln \prod_{i=1}^{n} p(y_t^i\mid x^i;\beta)
+    =\sum_{i=1}^{n}\sum_{c=1}^{k}\left[ y_c^i(\beta_c^\top x^i) - y_c^i\ln \left(\sum_{c'}\exp(\beta_{c'}^\top x^i) \right)\right].
+\end{align*}
+For simplicity, we abbreviate $p(y_t^i=1\mid x^i;\beta)$ as $p(y_t^i\mid x^i;\beta)$, where $t$ is the true class for $x^i$.~\defpoints{5}
+\item[(b)] Derive the gradient of $\ell(\beta)$ w.r.t. $\beta_1$, i.e.,
+$$\nabla_{\beta_1}\ell(\beta) = \nabla_{\beta_1} \sum_{i=1}^{n}\sum_{c=1}^{k}\left[ y_c^i(\beta_c^\top x^i) - y_c^i\ln \left(\sum_{c'}\exp(\beta_{c'}^\top x^i) \right)\right]$$
+
+Remark: Log likelihood is always concave; thus, we can optimize our model using gradient ascent. (The gradient of $\ell(\beta)$ w.r.t. $\beta_2,\ldots,\beta_k$ is similar, you don't need to write them)~\defpoints{5}
+\end{itemize}
+
+\solution
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage

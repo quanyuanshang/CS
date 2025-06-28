@@ -1,0 +1,35 @@
+\item \defpoints{10} [Kernel Method]
+
+Kernel regreesion is applying kernel methods into the regression problems. Consider the data $\left(X_{1}, Y_{1}\right), \ldots,\left(X_{n}, Y_{n}\right)$, where $X_{i} \in \mathbb{R}$ and $Y_{i} \in \mathbb{R}$. Inspired by the fact that
+$$\mathbb{E}[Y | X=x]=\int_{-\infty}^{+\infty} y p(y|x) \dy=\int_{-\infty}^{+\infty} y \dfrac{p(x, y)}{p(x)} \dy$$
+Define:
+$$\hat{m}(x)=\dfrac{\int_{-\infty}^{+\infty} y \hat{p}(x, y) \dy}{\hat{p}(x)}$$
+where
+$$\hat{p}(x)=\dfrac{1}{n} \sum_{i} \dfrac{1}{h} K\left(\frac{X_{i}-x}{h}\right)$$
+and
+$$\hat{p}(x, y)= \frac{1}{n} \sum_{i} \frac{1}{h^{2}} K\left(\frac{X_{i}-x}{h}\right) K\left(\frac{Y_{i}-y}{h}\right) .$$
+
+Assume that the kernel functon has the properties
+\begin{align*}
+\int_{-\infty}^{+\infty} K(u) \du &= 1 \\
+\int_{-\infty}^{+\infty} uK(u) \du &= 0
+\end{align*}
+Show that $\hat{m}(x)$ is exactly the kernel regression estimator
+$$\hat{m}(x) = \dfrac{\sum K\left(\frac{X_{i}-x}{h}\right) Y_{i}}{\sum K\left(\frac{X_{i}-x}{h}\right)}$$
+
+\solution
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage

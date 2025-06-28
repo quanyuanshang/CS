@@ -1,0 +1,32 @@
+\item \defpoints{15} [Perceptron Learning Algorithm]
+Consider a binary classification problem. The input space is $\mathbb{R}^{d}$. The output space is $\{ +1, -1 \}$. For simplicity, we modified the input to be $\mathbf{x} = [x_0, x_1, \cdots, x_d]^{\top}$ with $x_0=1$. The output is predicted using the hypothesis:
+\begin{equation}
+    h(\mathbf{x}) = \text{sign}(\mathbf{w}^{\top}\mathbf{x}),
+\end{equation}
+where $\mathbf{w} = [w_0, w_1, \cdots, w_d]^{\top}$ and $w_0$ is the bias.
+
+The \textit{perceptron learning algorithm} determines $\mathbf{w}$ using a simple iterative method. Here is how it works. At iteration $t$, where $t=0,1,2, \ldots$, there is a current value of the weight vector, call it $\mathbf{w}(t)$. The algorithm picks an example from $\left(\mathbf{x}_1, y_1\right) \cdots\left(\mathbf{x}_N, y_N\right)$ that is currently misclassified, call it $(\mathbf{x}(t), y(t))$, and uses it to update $\mathbf{w}(t)$. Since the example is misclassified, we have $y(t) \neq$ $\operatorname{sign}\left(\mathbf{w}^{\top}(t) \mathbf{x}(t)\right)$. The update rule is
+
+\begin{equation}
+    \mathbf{w}(t+1)=\mathbf{w}(t)+y(t) \mathbf{x}(t).
+\end{equation}
+
+\begin{itemize}
+\item[(a)] Show that $y(t) \mathbf{w}^{\top}(t) \mathbf{x}(t)<0$. [Hint: $\mathbf{x}(t)$ is misclassified by $\mathbf{w}(t)$.] ~\defpoints{5}
+\item[(b)] Show that $y(t) \mathbf{w}^{\top}(t+1) \mathbf{x}(t)>y(t) \mathbf{w}^{\top}(t) \mathbf{x}(t)$. ~\defpoints{5}
+\item[(c)]   As far as classifying $\mathbf{x}(t)$ is concerned, argue that the move from $\mathbf{w}(t)$ to $\mathbf{w}(t+1)$ is a move ``in the right direction". ~\defpoints{5}
+\end{itemize}
+
+\solution
+
+
+
+
+
+
+
+
+
+
+
+\newpage

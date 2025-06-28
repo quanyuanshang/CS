@@ -1,0 +1,36 @@
+\item \defpoints{15} [Expectation Maximization Algorithm]
+
+Consider a probabilistic model in which we collectively denote the observed variables by $X$ and all of the hidden variables by $Z$. The joint distribution $p(X,Z|\theta)$ is parameterized by $\theta$. Our goal is to maximize the likelihood function given by
+$$p(X|\theta)$$
+
+\begin{itemize}
+\item[(a)] Given an arbitrary distribution $q$, show that the log-likelihood of $X$ is~\defpoints{5}
+$$\log p(X|\theta) = \E_{Z\sim q}\left [\log\dfrac{p(X, Z|\theta)}{q(Z)}\right] + KL\left(q(Z)\| p(Z|X,\theta)\right)$$
+
+\item[(b)] Next let's consider the expectation step. First show the evidence lower bound (ELBO) is a lower bound of the log-likelihood. ~\defpoints{5}
+$$\log p(X|\theta)\geq\E_{Z|X,\theta^{(t-1)}}\left[\log\dfrac{p(X,Z|\theta)}{p(Z|X,\theta^{(t-1)})}\right]$$
+where $\theta^{(t-1)}$ is the parameter estimated in the previous iteration.
+
+\item[(c)] We want to maximize the ELBO, $\E_{Z|X,\theta^{(t-1)}}\left[\log \dfrac{p(X,Z|\theta)}{p(Z|X,\theta^{(t-1)})}\right]$ since maximizing $p(X|\theta)$ is hard. EM algorithm defines $Q(\theta|\theta^{(t-1)}) = \E_{Z|X,\theta^{(t-1)}}\left[ \log p(X,Z|\theta) \right]$. The M-step is given by:
+$$\theta^{(t)} \leftarrow \argmax_{\theta} Q(\theta|\theta^{(t-1)})$$
+Show that maximizing $Q(\theta|\theta^{(t-1)})$ and maximizing the ELBO is equivalent. ~\defpoints{5} Formally,
+$$\argmax_{\theta} Q(\theta|\theta^{(t-1)}) = \argmax_{\theta} \E_{Z|X,\theta^{(t-1)}}\left[\log \dfrac{p(X,Z|\theta)}{p(Z|X,\theta^{(t-1)})}\right]$$
+\end{itemize}
+
+\solution
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage

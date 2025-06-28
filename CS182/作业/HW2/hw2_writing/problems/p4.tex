@@ -1,0 +1,17 @@
+\item \defpoints{10} [Convexity of Mutual Information] From the definition of the mutual information $I(X;Y)=\sum\limits_{x,y}p(x,y)\log\dfrac{p(x,y)}{p(x)p(y)}$, we know that $I(X;Y)$ is a function of $p(x,y)$. This is because we can obtain $p(x)$ and $p(y)$ by computing the marginal distribution of $p(x,y)$. However, $I(X;Y)$ is a non-convex and non-concave function of $p(x,y)$. Which is not a good property for optimization. \\
+In some specific cases, $p(x)$ as given. Then $I(X;Y)$ is a function of $p(y|x)$. Prove that $I(X;Y)$ is a convex function of $p(y|x)$. \\
+\textbf{[Hints:]}
+\begin{itemize}
+\item Log-sum Inequality when $n=2$:
+$$(a_1+a_2)\log\dfrac{a_1+a_2}{b_1+b_2}\leq a_1\log\dfrac{a_1}{b_1}+a_2\log\dfrac{a_2}{b_2}$$
+\item Consider $3$ mutual information terms $I_1(X;Y), I_2(X;Y), I_{\lambda}(X;Y)$, which are separately computed from distributions $p_1(y|x), p_2(y|x), p_{\lambda}(y|x)=\lambda p_1(y|x)+(1-\lambda)p_2(y|x), \lambda\in[0,1]$. Then only need to prove that $I_{\lambda}(X;Y)\leq \lambda I_1(X;Y)+(1-\lambda)I_2(X;Y)$.
+\end{itemize}
+
+\textcolor{blue}{Solution} \\
+
+
+
+
+
+
+\newpage

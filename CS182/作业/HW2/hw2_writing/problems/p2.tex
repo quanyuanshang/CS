@@ -1,0 +1,15 @@
+\item \defpoints{25} [Convex Optimization Basics] Norm for a vector $\mathbf{x}\in\mathbb{R}^n$ or for a matrix $X\in\mathbb{R}^{m\times n}$ is a function $f:\mathbb{R}^{n}\rightarrow\mathbb{R}$ or $f:\mathbb{R}^{m\times n}\rightarrow\mathbb{R}$, which is widely used in optimization. Take vector's norm as example: they have many properties: 1. $f(\mathbf{x})\geq 0$, iff $\mathbf{x}=\mathbf{0}$ the equality holds; 2. $f(\alpha\mathbf{x})=|\alpha| f(\mathbf{x})$ for any $\alpha\in\mathbb{R}$; 3. $f(\mathbf{x}+\mathbf{y})\leq f(\mathbf{x})+f(\mathbf{y})$ for any $\mathbf{x},\mathbf{y}\in\mathbb{R}^n$. And matrices norms are similar, but you \textbf{should not} use them directly in this problem.
+\begin{itemize}
+    \item[(a)] Proof: Any vector norm $f:\mathbb{R}^{n}\rightarrow\mathbb{R}$ is convex. [Hint: Consider the definition of convex function: $\forall\theta\in[0,1], f(\theta\mathbf{x}+(1-\theta)\mathbf{y})\leq \theta f(\mathbf{x})+(1-\theta)f(\mathbf{y})$.] ~\defpoints{5}
+    \item[(b)] Let $f(X) = \|X\|_2$ be the spectral norm of a matrix $X \in \mathbb{R}^{m \times n}$, defined as the largest singular value of $X$. Prove that $f(X)$ is convex. [$\textcolor{blue}{\text{Hints:} 1. \lambda_{\max}(A)=\sup\limits_{\mathbf{y}\in\mathbb{R}^n}\dfrac{\mathbf{y}^{\top}A\mathbf{y}}{\|\mathbf{y}\|_2^2}, 2. \forall\mathbf{y}, \text{if } g(X,\mathbf{y}) \text{is convex in } X, \text{then }}$ $\textcolor{blue}{f(X)=\sup\limits_{\mathbf{y}\in\mathbb{R}^n}g(X,\mathbf{y}) \text{ is convex}}.$] \defpoints{10}
+    \item[(c)] Let $f(X) = \sum\limits_{i=1}^{r} \sigma_i(X)$ be the the nuclear norm of  a matrix $X \in \mathbb{R}^{m \times n}$,where $\sigma_i(X)$ are the singular values of $X$. Prove that $f(X)$ is convex. [$\textcolor{blue}{\text{Hint: } \|X\|_* = \sup\limits_{\|Z\|_2 \leq 1} <Z,X>}$] \defpoints{10}
+\end{itemize}
+
+\textcolor{blue}{Solution} \\
+
+
+
+
+
+
+\newpage
